@@ -1,10 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Kaiwa Cafe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaiwa Café</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f8f5ef;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+background:white;
+width:90%;
+max-width:500px;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+text-align:center;
+}
+
+h1{
+color:#556b2f;
+}
+
+button{
+padding:12px 20px;
+margin-top:20px;
+border:none;
+background:#7aa874;
+color:white;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#658b5d;
+}
+
+#jp{
+font-size:24px;
+font-weight:bold;
+margin:20px 0;
+}
+
+#id{
+color:#666;
+}
+</style>
 </head>
+
 <body>
-<h1>🌸 Kaiwa Cafe</h1>
-<p>Coming Soon...</p>
+
+<div class="card">
+
+<h1>🌸 Kaiwa Café</h1>
+
+<div id="jp"></div>
+
+<div id="id"></div>
+
+<button onclick="nextCard()">🎲 Next Card</button>
+
+</div>
+
+<script>
+
+const cards=[
+{
+jp:"最近(さいきん)、一番(いちばん)うれしかったことは何(なん)ですか。",
+id:"Hal apa yang paling membuatmu senang akhir-akhir ini?"
+},
+{
+jp:"休(やす)みの日(ひ)は何(なに)をしますか。",
+id:"Biasanya kamu ngapain saat libur?"
+},
+{
+jp:"日本(にほん)へ行(い)ったら何(なに)をしたいですか。",
+id:"Kalau ke Jepang kamu ingin melakukan apa?"
+},
+{
+jp:"好(す)きな食(た)べ物(もの)は何(なん)ですか。",
+id:"Makanan favoritmu apa?"
+},
+{
+jp:"子(こ)どものころ、何(なに)が好(す)きでしたか。",
+id:"Waktu kecil kamu suka apa?"
+}
+];
+
+function nextCard(){
+
+const c=cards[Math.floor(Math.random()*cards.length)];
+
+document.getElementById("jp").innerHTML=c.jp;
+document.getElementById("id").innerHTML=c.id;
+
+}
+
+nextCard();
+
+</script>
+
 </body>
 </html>
