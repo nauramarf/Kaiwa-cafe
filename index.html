@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Kaiwa Café</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial,sans-serif;
@@ -32,7 +35,7 @@ color:#556b2f;
 
 button{
 padding:12px 20px;
-margin-top:20px;
+margin:10px;
 border:none;
 background:#7aa874;
 color:white;
@@ -54,66 +57,90 @@ margin:20px 0;
 #id{
 color:#666;
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <div class="card">
 
 <h1>🌸 Kaiwa Café</h1>
+
+
+<div id="menu">
 
 <p>Pilih latihan kaiwa</p>
 
 <button onclick="openTalk()">
 🎴 Talk Card
 </button>
-  
+
+<br>
+
 <button>
 💭 Opinion
 </button>
+
+<br>
 
 <button>
 🌙 Deep Talk
 </button>
 
 </div>
-  
+
+
+
+<div id="game" style="display:none;">
+
+<div id="jp"></div>
+
+<div id="id"></div>
+
+<button onclick="nextCard()">
+🎲 Next Card
+</button>
+
+</div>
+
+
+</div>
+
+
+
 <script>
 
-const c=talkCards[Math.floor(Math.random()*talkCards.length)];
+
+const talkCards=[
+
 {
 jp:"最近(さいきん)、一番(いちばん)うれしかったことは何(なん)ですか。",
 id:"Hal apa yang paling membuatmu senang akhir-akhir ini?"
 },
+
 {
 jp:"休(やす)みの日(ひ)は何(なに)をしますか。",
-id:"Biasanya kamu ngapain saat libur?"
+id:"Apa yang biasanya kamu lakukan saat hari libur?"
 },
-{
-jp:"日本(にほん)へ行(い)ったら何(なに)をしたいですか。",
-id:"Kalau ke Jepang kamu ingin melakukan apa?"
-},
+
 {
 jp:"好(す)きな食(た)べ物(もの)は何(なん)ですか。",
-id:"Makanan favoritmu apa?"
+id:"Apa makanan favoritmu?"
 },
+
 {
-jp:"子(こ)どものころ、何(なに)が好(す)きでしたか。",
-id:"Waktu kecil kamu suka apa?"
+jp:"趣味(しゅみ)は何(なん)ですか。",
+id:"Apa hobimu?"
 }
+
 ];
 
-function nextCard(){
 
-const c=talkCards[Math.floor(Math.random()*talkCards.length)];
-  
-document.getElementById("jp").innerHTML=c.jp;
-document.getElementById("id").innerHTML=c.id;
 
-}
-
-nextCard();
 function openTalk(){
 
 document.getElementById("menu").style.display="none";
@@ -124,7 +151,24 @@ nextCard();
 
 }
 
+
+
+function nextCard(){
+
+const c=talkCards[Math.floor(Math.random()*talkCards.length)];
+
+
+document.getElementById("jp").innerHTML=c.jp;
+
+document.getElementById("id").innerHTML=c.id;
+
+
+}
+
+
+
 </script>
+
 
 </body>
 </html>
