@@ -65,10 +65,10 @@ color:#666;
 
 <p>Pilih latihan kaiwa</p>
 
-<button>
+<button onclick="openTalk()">
 🎴 Talk Card
 </button>
-
+  
 <button>
 💭 Opinion
 </button>
@@ -81,7 +81,7 @@ color:#666;
   
 <script>
 
-const cards=[
+const c=talkCards[Math.floor(Math.random()*talkCards.length)];
 {
 jp:"最近(さいきん)、一番(いちばん)うれしかったことは何(なん)ですか。",
 id:"Hal apa yang paling membuatmu senang akhir-akhir ini?"
@@ -106,14 +106,23 @@ id:"Waktu kecil kamu suka apa?"
 
 function nextCard(){
 
-const c=cards[Math.floor(Math.random()*cards.length)];
-
+const c=talkCards[Math.floor(Math.random()*talkCards.length)];
+  
 document.getElementById("jp").innerHTML=c.jp;
 document.getElementById("id").innerHTML=c.id;
 
 }
 
 nextCard();
+function openTalk(){
+
+document.getElementById("menu").style.display="none";
+
+document.getElementById("game").style.display="block";
+
+nextCard();
+
+}
 
 </script>
 
